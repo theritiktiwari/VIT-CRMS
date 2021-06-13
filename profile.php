@@ -49,7 +49,41 @@
       }
 
 
+        
+        
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          
+        include '../partials/_dbconnect.php';
+        $username = $_POST['username'];
+        $opassword = $_POST['password'];
+        $cpassword=$_POST['cpassword']; 
 
+        $match = false;
+
+        $sql = "SELECT password FROM user_data WHERE username = '$username'";
+          
+        $result = mysqli_query($conn, $sql); 
+        $num = mysqli_num_rows($result);
+        if ($num) {
+            while($row = mysqli_fetch_assoc($result)){
+                if (password_verify($opassword, $row['opassword'])) {
+                    if ($opassword==$cpasssword) {
+                        $sql1 = "Update user_data set password='$cpasssword' where username = '$username'";
+                        $result2 = mysqli_query($conn, $sql1);
+                        if ($result) {
+                            $match = "Signup Successfull!";
+                        }
+                        else{
+                            $match = "Passowrd don't match!";
+                        }
+                    }
+                else{
+                    $match = "Invalid old Password";
+                }
+            }
+        }
+        
+              
 
 
 

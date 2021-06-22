@@ -14,3 +14,7 @@ User credential - <br>
 Admin Credential - <br>
 • Username : admin <br>
 • Password : admin123 <br>
+
+<h3>Puropse : </h3>
+Students may find difficulty, finding the resources of college <br>
+Here they can find everything and also can help other students.

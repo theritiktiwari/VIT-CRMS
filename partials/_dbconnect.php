@@ -1,5 +1,6 @@
 <?php
 
+
 // $server = "localhost";
 // $user = "root";
 // $password = "";
@@ -11,6 +12,12 @@
 // if(!$conn){
 //     die("Not connect with server");
 // }
+    
+// Comment above code if you're using heruko server
+
+// ------------------------------------------
+
+// Comment below code if you're using localhost
 
 //Get Heroku ClearDB connection information
 $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
